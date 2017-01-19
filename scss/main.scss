@@ -1,6 +1,7 @@
 @import "./imports/normalize";
 @import "./imports/helpers";
 
+
 @mixin grouped-btn-styles($bg-color, $txt-color) {
    background: $bg-color;
    text-align: center;
@@ -22,11 +23,9 @@
 
 body {
    margin: 0;
-   font-family: 'GillSans';
+   font-family: 'Lato', 'GillSans', 'sans-serif';
    font-weight: 400;
 }
-
-
 
 
 #app-container{
@@ -65,25 +64,61 @@ body {
 // *******************************************
 // Your Work Below
 // *******************************************
-
-   ul.nav-bar{
-      padding:0;
-      background: #333;
-      color: #fff;
-
-      li {
-         padding: 20px;
-      }
-   }
-
-   @media screen and (min-width: 768px){
-
-
-
-   }
-
-   @media screen and (min-width: 1024px){
-
-   }
-// *******************************************
 }
+
+ul.nav-bar{
+	padding:0;
+	background: #333;
+	color: #fff;
+	
+	// INSTRUCTOR
+	margin: 0;
+
+	position: fixed;
+	bottom: 0; left: 0;
+	width: 100%;
+
+	text-align: center;
+	//-------
+	li {
+		padding: 20px;
+		
+		//INSTRUCTOR
+		display: inline-block;
+		//-----
+	}
+}
+
+@media screen and (min-width: 768px){
+
+	//INSTRUCTOR
+	ul.nav-bar{
+		bottom: initial;
+		top: 0;
+		text-align: left;
+	}
+	//-----
+}
+
+@media screen and (min-width: 1024px){
+
+	//INSTRUCTOR
+	$desktop-dash-width: 80px;
+
+	#app-container{
+		padding-left: $desktop-dash-width;
+	}
+	
+	ul.nav-bar{
+		width: $desktop-dash-width;
+		height: 100%;
+		li{
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	//-----
+	
+}
+// *******************************************
+

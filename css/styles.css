@@ -378,7 +378,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: 'GillSans';
+  font-family: 'Lato', 'GillSans', 'sans-serif';
   font-weight: 400; }
 
 #app-container .header {
@@ -432,11 +432,35 @@ body {
     #app-container .more-info .btn-more-info:hover {
       background: #333;
       color: #fff; }
-#app-container ul.nav-bar {
+
+ul.nav-bar {
   padding: 0;
   background: #333;
-  color: #fff; }
-  #app-container ul.nav-bar li {
-    padding: 20px; }
+  color: #fff;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center; }
+  ul.nav-bar li {
+    padding: 20px;
+    display: inline-block; }
+
+@media screen and (min-width: 768px) {
+  ul.nav-bar {
+    bottom: initial;
+    top: 0;
+    text-align: left; } }
+@media screen and (min-width: 1024px) {
+  #app-container {
+    padding-left: 80px; }
+
+  ul.nav-bar {
+    width: 80px;
+    height: 100%; }
+    ul.nav-bar li {
+      display: block;
+      margin: 0 auto; } }
 
 /*# sourceMappingURL=styles.css.map */
