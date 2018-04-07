@@ -2,6 +2,9 @@
 @import "./imports/normalize";
 @import "./imports/variables";
 
+$tablet: 767px;
+$desktop: 991px;
+
 * {
   box-sizing: border-box;
 }
@@ -12,10 +15,18 @@ body {
 }
 
 /* General Styles */
+.header__btn-options{
+}
 
 .btn{
   padding: 15px 10px;
   background: #cccccc;
+  display: block;
+  margin: 10px auto;
+
+  @media screen and (min-width: $tablet){
+    display: inline-block;
+  }
 }
 
 .btn--success{
@@ -32,16 +43,43 @@ body {
 
 #app-container{
   padding-bottom: 75px;
+  position: relative;
 }
 
 .nav{
   background: #333;
   color: #fff;
+  position: fixed;
+
+  /*mobile styles*/
+  bottom: 0%;
+  width: 100%;
+
+  @media screen and (min-width: $tablet){
+    bottom: initial;
+    top: 0;
+    width: 65px;
+    height: 100%;
+  }
+
+  @media screen and (min-width: $desktop){
+    height: initial;
+    width: 100%;
+    text-align: right;
+  }
 }
 
 .nav__option{
-  display: inline-block;
   padding: 20px;
+  display: inline-block;
+
+  @media screen and (min-width: $tablet){
+    display: block;
+  }
+
+  @media screen and (min-width: $desktop){
+    display: inline-block;
+  }
 }
 
 .header{
@@ -69,6 +107,7 @@ body {
   margin: 20px auto;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
   .search-box__input{
@@ -83,27 +122,48 @@ body {
   .search-box__btn {
     margin: 0;
     margin-left: -2px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     border: 0 ;
     color: #666666;
     text-align: center;
+    position: relative;
   }
 
   .search-box__icon{
+    @media screen and (min-width: $tablet){
+      visibility: hidden;
+    }
   }
 
   .search-box__text{
+    visibility: hidden;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+
+    @media screen and (min-width: $tablet){
+      visibility: visible;
+    }
   }
 
 .options-group{
   padding: 15px 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
   .options-group__single{
     width: 50%;
     text-align: center;
+
+    @media screen and (min-width: $tablet){
+      width: 33.3%;
+    }
+
+    @media screen and(min-width: $desktop){
+      width: 15.67%;
+    }
   }
 
   .options-group__icon{
